@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?= base_url();?>assets/login/images/signin-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="<?= base_url();?>assets/login/images/hipmikindo_logo.jpeg" alt="sing up image"></figure>
                         <a href="#" class="signup-image-link">Create an account</a>
                     </div>
 
