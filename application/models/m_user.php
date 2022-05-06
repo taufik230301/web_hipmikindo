@@ -13,4 +13,10 @@ class M_user extends CI_Model
         else
             return false;
     }
+
+    public function cek_login($username, $password)
+    {
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE username='$username' AND password='$password' ");
+        return $hasil;
+    }
 }
