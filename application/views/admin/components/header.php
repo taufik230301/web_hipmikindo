@@ -22,3 +22,7 @@
 <link rel="stylesheet" href="<?= base_url();?>assets/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url();?>assets/plugins/summernote/summernote-bs4.min.css">
+<!-- Sweetalert -->
+<script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Logo -->
+<link rel="icon" href="<?= base_url() ?>assets/image/favico.ico" />

@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="<?= base_url();?>assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        <img src="<?= base_url() ?>assets/image/hipmikindo_logo.jpeg" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">HIPMIKINDO</span>
     </a>
 
     <!-- Sidebar -->
