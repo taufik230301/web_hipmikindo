@@ -16,6 +16,9 @@
 
     <!-- SweetAlert -->
     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Favicons -->
+    <link href="<?= base_url() ?>assets/image/favico.ico" rel="icon">
 </head>
 
 <body>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>WEB-HIPMIKINDO</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet"
@@ -16,6 +16,9 @@
 
     <!-- SweetAlert -->
     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Favicons -->
+    <link href="<?= base_url() ?>assets/image/favico.ico" rel="icon">
 </head>
 
 <body>
@@ -48,7 +51,7 @@
                     <div class="signin-image">
                         <figure><img src="<?= base_url();?>assets/login/images/hipmikindo_logo.jpeg"
                                 alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                        <a href="<?= base_url();?>Register" class="signup-image-link">Buat Akun</a>
                     </div>
 
                     <div class="signin-form">

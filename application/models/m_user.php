@@ -6,7 +6,7 @@ class M_user extends CI_Model
     {
        $this->db->trans_start();
 
-       $this->db->query("INSERT INTO user(username,password,email ,no_telp ,id_user_level, id_user_detail) VALUES ('$username','$password','$email','$no_telp','$id_user_level','$id')");
+       $this->db->query("INSERT INTO user(id,username,password,email ,no_telp ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$no_telp','$id_user_level','$id')");
        $this->db->query("INSERT INTO user_detail(id_user_detail, id_status_verifikasi) VALUES ('$id','$id_status_verifikasi')");
 
        $this->db->trans_complete();
