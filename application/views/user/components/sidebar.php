@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url();?>Form_Daftar/view_user" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>Form Daftar</p>
                     </a>
