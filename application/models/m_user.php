@@ -16,10 +16,10 @@ class M_user extends CI_Model
             return false;
     }
 
-    public function cek_login($username, $password)
+    public function cek_login($username)
     {
         
-        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE username='$username' AND password='$password' ");
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE username='$username'");
         return $hasil;
         
     }
@@ -34,6 +34,12 @@ class M_user extends CI_Model
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 2 WHERE id='$id'");
         return $hasil;
+    }
+
+    public function get_count_user()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id) as total_user FROM user WHERE id_user_level=2");
+            return $hasil;
     }
 
     public function insert_data_user($id, $username, $password, $email, $no_telp, $nama_usaha, $alamat ,$foto ,$id_user_level, $id_status_verifikasi)

@@ -19,10 +19,12 @@ class Login extends CI_Controller {
 		$username = $this->input->post("username");
 		$password = $this->input->post("password");
 
-		$user = $this->m_user->cek_login($username, $password);
+		$user = $this->m_user->cek_login($username);
 
 		if($user->num_rows()>0){
 			$user = $user->row_array();
+
+			if($user['password'] == $password){
 
 			if($user['id_user_level'] == 1){
 
@@ -46,6 +48,11 @@ class Login extends CI_Controller {
 				$this->session->set_flashdata('loggin_err','loggin_err');
 				redirect('Login/index');
 			}
+			     
+		}else{
+			$this->session->set_flashdata('loggin_err_pass','loggin_err_pass');
+		redirect('Login/index');
+		}
 
 		}else{
 			$this->session->set_flashdata('loggin_err_no_user','loggin_err_no_user');
@@ -54,6 +61,13 @@ class Login extends CI_Controller {
 
 
 
+	}
+
+	public function log_out(){
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('id');
+        $this->session->set_flashdata('success_log_out','success_log_out');
+            redirect('Login/index');
 	}
     
 }
