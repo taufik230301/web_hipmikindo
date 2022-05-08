@@ -29,6 +29,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
 				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				
 				redirect('Dashboard/dashboard_admin');
 
@@ -37,6 +38,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
 				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 
 				redirect('Dashboard/dashboard_user');
 

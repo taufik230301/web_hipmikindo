@@ -35,13 +35,13 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>Dashboard/dashboard_admin" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
                         <p class="text">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url();?>User/view_admin" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
                         <p>User</p>
                     </a>
