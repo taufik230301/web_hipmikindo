@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Scaffold Bootstrap Template - Index</title>
+    <title>WEB - HIPMIKINDO</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -39,7 +39,7 @@
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
-                <h1><a href="index.html">HIPMIKINDO</a></h1>
+                <h1><a href="#">HIPMIKINDO</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -201,19 +201,14 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Anggota UMKM</h2>
+                    <p>Berikut UMKM yang ada di dalam naungan kami.</p>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
                         </ul>
                     </div>
                 </div>
@@ -384,13 +379,11 @@
 
                 <div class="row" data-aos="zoom-in">
                     <div class="col-lg-9 text-center text-lg-start">
-                        <h3>Call To Action</h3>
-                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.</p>
+                        <h3>Daftarkan UMKM mu Sekarang !</h3>
+                        <p> Berikut pendaftaran UMKM mu.</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                        <a class="cta-btn align-middle" href="<?= base_url();?>Register/index">Daftar</a>
                     </div>
                 </div>
 
@@ -457,10 +450,10 @@
                         <div class="footer-info">
                             <h3>HIPMIKINDO</h3>
                             <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
+                            Jl. Merdeka No.66, Talant Semut, Kec. Bukit Kecil <br>
+                            Kota Palembang, Sumatera Selatan 30136<br><br>
                                 <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
+                                <strong>Email:</strong> dpd.hipmikindo.sumsel@gmail.com<br>
                             </p>
                             <div class="social-links mt-3">
                                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -489,15 +482,9 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>Scaffold</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>HIPMIKINDO</span></strong>. All Rights Reserved
             </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
+            
         </div>
     </footer><!-- End Footer -->
 
