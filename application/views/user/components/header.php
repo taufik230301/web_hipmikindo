@@ -24,3 +24,5 @@
 <link rel="stylesheet" href="<?= base_url();?>assets/plugins/summernote/summernote-bs4.min.css">
 <!-- Logo -->
 <link rel="icon" href="<?= base_url() ?>assets/image/favico.ico" />
+<!-- Sweetalert -->
+<script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>

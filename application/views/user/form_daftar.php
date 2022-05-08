@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -48,21 +67,52 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        
-                       
-                        
-                    </div>
-                    <!-- /.row -->
-                    
+                    <?php
+                                            $id = 0;
+                                            foreach($data_user as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id'];
+                                            $username = $i['username'];
+                                            $email = $i['email'];
+                                            $no_telp = $i['no_telp'];
+                                            $nama_usaha = $i['nama_usaha'];
+                                            $alamat = $i['alamat'];
+                                            $logo_usaha = $i['logo_usaha'];
+                                            $password = $i['password'];
+                                            
+
+                                            ?>
+                    <form action="<?=base_url();?>Form_daftar/daftar_user" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="id" value="<?= $id_user ?>" hidden>
+                        <div class="form-group">
+                            <label for="nama_usaha">Nama Usaha</label>
+                            <input type="text" class="form-control" id="nama_usaha" aria-describedby="nama_usaha"
+                                name="nama_usaha">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="logo_usaha">Logo Usaha</label>
+                            <input type="file" class="form-control" id="logo_usaha" aria-describedby="logo_usaha"
+                                name="logo_usaha">
+                        </div>
+                        <input type="text" class="form-control" id="logo_usaha_old" aria-describedby="emailHelp"
+                            name="logo_usaha_old" value="<?=$logo_usaha?>" hidden>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                    <?php endforeach; ?>
+
                 </div>
                 <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

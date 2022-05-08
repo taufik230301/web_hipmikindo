@@ -166,10 +166,10 @@ class User extends CI_Controller {
 			$hasil = $this->m_user->update_data_user($id, $username, $password, $email, $no_telp, $nama_usaha, $alamat, $foto_logo['file_name'], $id_status_verifikasi);
 			
 					if($hasil==false){
-						$this->session->set_flashdata('eror_input','eror_input');
+						$this->session->set_flashdata('eror_edit','eror_edit');
 					
 					}else{
-						$this->session->set_flashdata('input','input');
+						$this->session->set_flashdata('edit','edit');
 					}
 					@unlink($path.$this->input->post('logo_usaha_old'));
 					redirect('User/view_admin');
