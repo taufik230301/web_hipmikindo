@@ -76,7 +76,7 @@
     });
     </script>
     <?php } ?>
-    
+
 
     <div class="wrapper">
 
@@ -174,6 +174,9 @@
                                                 <td><?= $no_telp ?></td>
                                                 <td><?= $nama_usaha ?></td>
                                                 <td><?= $alamat ?></td>
+                                                <?php if($logo_usaha == NULL){ ?>
+                                                <td><center><i class="fas fa-times"></i></center></td>
+                                                <?php }else{ ?>
                                                 <td>
                                                     <center> <a
                                                             href="<?= base_url();?>assets/foto/<?php echo $logo_usaha?>"
@@ -181,6 +184,7 @@
                                                                 src="<?= base_url();?>assets/foto/<?php echo $logo_usaha?>"
                                                                 style="width: 25%"> </a>
                                                 </td>
+                                                <?php } ?>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -215,9 +219,10 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?=base_url();?>User/edit_user"
-                                                                method="POST" enctype="multipart/form-data">
-                                                                <input type="text" name="id" value="<?= $id_user ?>" hidden>
+                                                            <form action="<?=base_url();?>User/edit_user" method="POST"
+                                                                enctype="multipart/form-data">
+                                                                <input type="text" name="id" value="<?= $id_user ?>"
+                                                                    hidden>
                                                                 <div class="form-group">
                                                                     <label for="username">Username</label>
                                                                     <input type="text" class="form-control"
@@ -261,12 +266,13 @@
                                                                 </div>
                                                                 <input type="text" class="form-control"
                                                                     id="logo_usaha_old" aria-describedby="emailHelp"
-                                                                    name="logo_usaha_old" value="<?=$logo_usaha?>" hidden>
+                                                                    name="logo_usaha_old" value="<?=$logo_usaha?>"
+                                                                    hidden>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
                                                             </form>
                                                         </div>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>
