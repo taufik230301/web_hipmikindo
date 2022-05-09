@@ -44,18 +44,19 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="<?= base_url();?>Settings/update_account_settigns" method="POST">
+                <input type="text" value="<?=$this->session->userdata('id');?>" name="id" hidden>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="username">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Password</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" aria-describedby="password">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Ulangi Password</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="re_pass">Ulangi Password</label>
+                        <input type="password" class="form-control" id="re_pass" name="re_pass" aria-describedby="re_pass">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -9,10 +9,10 @@ class Form_Daftar extends CI_Controller {
         $this->load->model('m_user');
 	}
 
-	public function view_user()
+	public function view_user($id)
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
-		$data['data_user'] = $this->m_user->get_user_umkm()->result_array();
+		$data['data_user'] = $this->m_user->get_user_umkm_by_id($id)->result_array();
 		$this->load->view('user/form_daftar', $data);
 
 	}else{
@@ -60,7 +60,7 @@ class Form_Daftar extends CI_Controller {
 			
 		}else{
 			$this->session->set_flashdata('error_file','error_file');
-			redirect('Form_Daftar/view_user');
+			redirect('Form_Daftar/view_user/'.$id);
 		}
 
 		
@@ -74,7 +74,7 @@ class Form_Daftar extends CI_Controller {
 						$this->session->set_flashdata('input','input');
 					}
 					@unlink($path.$this->input->post('logo_usaha_old'));
-					redirect('Form_Daftar/view_user');
+					redirect('Form_Daftar/view_user/'.$id);
 
 			// echo $username;
 			// echo "<br>";

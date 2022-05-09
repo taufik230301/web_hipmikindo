@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    
     <?php if ($this->session->flashdata('password_err')){ ?>
     <script>
     swal({
@@ -31,6 +32,7 @@
     });
     </script>
     <?php } ?>
+
     <div class="main">
 
         <!-- Sign up form -->

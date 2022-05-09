@@ -15,7 +15,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block"><?=$this->session->userdata('username');?></a>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url();?>Form_Daftar/view_user" class="nav-link">
+                    <a href="<?= base_url();?>Form_Daftar/view_user/<?=$this->session->userdata('id');?>" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>Form Daftar</p>
                     </a>

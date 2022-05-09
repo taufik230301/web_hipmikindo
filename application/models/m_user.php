@@ -32,7 +32,7 @@ class M_user extends CI_Model
 
     public function get_user_umkm_by_id($id)
     {
-        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 2 WHERE id='$id'");
+        $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 2 AND id='$id'");
         return $hasil;
     }
 
@@ -77,6 +77,19 @@ class M_user extends CI_Model
         $this->db->query("UPDATE user SET username='$username', password='$password', email='$email', no_telp='$no_telp' WHERE id='$id'");
         $this->db->query("UPDATE user_detail SET nama_usaha='$nama_usaha', alamat='$alamat', logo_usaha='$logo_usaha'  WHERE id_user_detail='$id'");
 
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_account($id, $username, $password)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user SET username='$username', password='$password' WHERE id='$id'");
+        
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;

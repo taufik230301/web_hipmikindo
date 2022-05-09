@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_user');
 	}
+	
 	public function dashboard_admin()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
