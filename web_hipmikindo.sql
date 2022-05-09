@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 05:09 AM
+-- Generation Time: May 10, 2022 at 01:52 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -54,9 +54,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_telp`, `id_user_level`, `id_user_detail`) VALUES
 ('0f49d8519cb0233a78a143460f18d061', 'kresna123', '123', 'malian123@gmail.com', '0812781728', 2, '0f49d8519cb0233a78a143460f18d061'),
-('1a4c64629ba772eac53d0eb53e4d2de2', 'taufik23', 'taufik231', 'taufiiqul.hakim@binus.ac.id', '0812781728', 2, '1a4c64629ba772eac53d0eb53e4d2de2'),
-('d41d8cd98f00b204e9800998ecf8427e', 'admin', 'admin', 'admin@gmail.com', '081217812', 1, 'd41d8cd98f00b204e9800998ecf8427e'),
-('ede7bac957a9cdffa81042d2172e3fc0', 'jalal', 'jalal123', 'jalal@gmail.com', '08128128182712', 2, 'ede7bac957a9cdffa81042d2172e3fc0');
+('1a4c64629ba772eac53d0eb53e4d2de2', 'taufik123', 'taufik123', 'taufiiqul.hakim@binus.ac.id', '0812781728', 2, '1a4c64629ba772eac53d0eb53e4d2de2'),
+('50207cacbc9af45e566eb638f8ed12b2', 'malas', 'malas123', 'malian123@gmail.com', '0812781728', 2, '50207cacbc9af45e566eb638f8ed12b2'),
+('d41d8cd98f00b204e9800998ecf8427e', 'admin', 'admin', 'admin@gmail.com', '081217812', 1, 'd41d8cd98f00b204e9800998ecf8427e');
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ INSERT INTO `user_detail` (`id_user_detail`, `nama_usaha`, `alamat`, `logo_usaha
 ('d41d8cd98f00b204e9800998ecf8427e', NULL, NULL, '', 1),
 ('1a4c64629ba772eac53d0eb53e4d2de2', 'Tukang aplikasi', 'Nice', 'a942644172b54d5a15e24d3ec850f513.png', 1),
 ('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Jl. Sekip', 'f851d1543c51fba6a8498d376f1db9b4.png', 1),
-('ede7bac957a9cdffa81042d2172e3fc0', 'cuciyok', 'Bungaran', 'f85843a58c65bac30788c531771a6f21.png', 1);
+('50207cacbc9af45e566eb638f8ed12b2', 'Malas Koding', 'Jl.Belanti', 'de419f84840fab46835e738bd233e696.png', 1);
 
 -- --------------------------------------------------------
 
