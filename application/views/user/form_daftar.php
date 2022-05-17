@@ -95,16 +95,24 @@
                                 <div class="form-group">
                                     <label for="nama_usaha">Nama Usaha</label>
                                     <input type="text" class="form-control" id="nama_usaha"
-                                        aria-describedby="nama_usaha" name="nama_usaha">
+                                        aria-describedby="nama_usaha" name="nama_usaha" value="<?= $nama_usaha ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"><?=$alamat?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="logo_usaha">Logo Usaha</label>
                                     <input type="file" class="form-control" id="logo_usaha"
                                         aria-describedby="logo_usaha" name="logo_usaha">
+                                </div>
+                                <div class="form-group">
+                                    <label for="keterangan">Preview Logo Usaha</label>
+                                    <?php if($logo_usaha){?>
+                                    <img src="<?= base_url();?>assets/foto/<?php echo $logo_usaha?>" style="width: 25%">
+                                    <?php }else{ ?>
+                                    <p>Masukan Logo Usaha !</p>
+                                    <?php } ?>
                                 </div>
                                 <input type="text" class="form-control" id="logo_usaha_old" aria-describedby="emailHelp"
                                     name="logo_usaha_old" value="<?=$logo_usaha?>" hidden>

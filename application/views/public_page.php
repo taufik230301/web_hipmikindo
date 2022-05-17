@@ -194,7 +194,7 @@
             </div>
         </section><!-- End Features Section -->
 
-      
+
 
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
@@ -214,159 +214,39 @@
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <?php
+                                            $id = 0;
+                                            foreach($data_user as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id'];
+                                            $username = $i['username'];
+                                            $email = $i['email'];
+                                            $no_telp = $i['no_telp'];
+                                            $nama_usaha = $i['nama_usaha'];
+                                            $alamat = $i['alamat'];
+                                            $logo_usaha = $i['logo_usaha'];
+                                            $password = $i['password'];
+                                            
 
+                                            ?>
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-1.jpg"
+                            <img src="<?= base_url();?>assets/foto/<?=$logo_usaha?>"
                                 class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
+                                <h4><?=$nama_usaha?></h4>
+                                <p><?=$no_telp?></p>
                             </div>
                             <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-1.jpg"
+                                <a href="<?= base_url();?>assets/foto/<?=$logo_usaha?>"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
                                         class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach;?>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-2.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-2.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-3.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-3.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-4.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-4.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-5.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-5.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-6.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-6.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-7.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-7.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-8.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-8.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/public_page/img/portfolio/portfolio-9.jpg"
-                                class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/public_page/img/portfolio/portfolio-9.jpg"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -391,7 +271,7 @@
         </section><!-- End Cta Section -->
 
 
-      
+
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact section-bg">
@@ -408,7 +288,8 @@
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h4>Location:</h4>
-                                <p>Jl. Merdeka No.66, Talant Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30136</p>
+                                <p>Jl. Merdeka No.66, Talant Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan
+                                    30136</p>
                             </div>
 
                             <div class="email">
@@ -423,7 +304,7 @@
                                 <p>+1 5589 55488 55s</p>
                             </div>
 
-                            
+
                             <iframe
                                 src="https://maps.google.com/maps?q=Jl.%20Merdeka%20No.66,%20Talant%20Semut,%20Kec.%20Bukit%20Kecil,%20Kota%20Palembang,%20Sumatera%20Selatan%2030136&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
@@ -431,7 +312,7 @@
 
                     </div>
 
-                    
+
 
                 </div>
 
@@ -450,8 +331,8 @@
                         <div class="footer-info">
                             <h3>HIPMIKINDO</h3>
                             <p>
-                            Jl. Merdeka No.66, Talant Semut, Kec. Bukit Kecil <br>
-                            Kota Palembang, Sumatera Selatan 30136<br><br>
+                                Jl. Merdeka No.66, Talant Semut, Kec. Bukit Kecil <br>
+                                Kota Palembang, Sumatera Selatan 30136<br><br>
                                 <strong>Phone:</strong> +1 5589 55488 55<br>
                                 <strong>Email:</strong> dpd.hipmikindo.sumsel@gmail.com<br>
                             </p>
@@ -474,7 +355,7 @@
                         </ul>
                     </div>
 
-                    
+
 
                 </div>
             </div>
@@ -484,7 +365,7 @@
             <div class="copyright">
                 &copy; Copyright <strong><span>HIPMIKINDO</span></strong>. All Rights Reserved
             </div>
-            
+
         </div>
     </footer><!-- End Footer -->
 

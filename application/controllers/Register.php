@@ -27,6 +27,7 @@ class Register extends CI_Controller {
 
         if($password == $re_pass)
         {
+            
             $hasil = $this->m_user->pendaftaran_user($id, $username, $email, $no_telp, $password, $id_user_level, $id_status_verifikasi);
 
             if($hasil==false){
@@ -35,7 +36,8 @@ class Register extends CI_Controller {
 			}else{
 				$this->session->set_flashdata('input','input');
 				redirect('login/index');
-			}
+            }
+            
         }else{
             $this->session->set_flashdata('password_err','password_err');
 			redirect('register/index');
