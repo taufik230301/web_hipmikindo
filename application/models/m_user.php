@@ -84,6 +84,20 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function update_status_verifikasi_user($status_verifikasi, $id)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user_detail SET id_status_verifikasi='$status_verifikasi' WHERE id_user_detail='$id'");
+       
+
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     public function update_account($id, $username, $password)
     {
         $this->db->trans_start();
@@ -97,6 +111,16 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function edit_user($id, $password){
+        $this->db->trans_start();
+       $this->db->query("UPDATE user SET password='$password' WHERE id='$id'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }   
+
     public function daftar_data_user($id, $nama_usaha, $alamat, $logo_usaha, $id_status_verifikasi)
     {
         $this->db->trans_start();
@@ -108,5 +132,26 @@ class M_user extends CI_Model
             return true;
         else
             return false;
+    }
+
+    public function update_token_user($token, $id)
+    {
+         $this->db->trans_start();
+         $this->db->query("UPDATE user SET token='$token' WHERE id='$id'");
+         $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
+    public function cek_email($email){
+        $hasil=$this->db->query("SELECT * FROM user WHERE email='$email' ");
+        return $hasil;
+    }
+
+    public function read_user_by_token($token){
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE token='$token' ");
+        return $hasil;
     }
 }

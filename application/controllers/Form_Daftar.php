@@ -30,7 +30,7 @@ class Form_Daftar extends CI_Controller {
 			$id = $this->input->post("id");
 			$nama_usaha = $this->input->post("nama_usaha");
 			$alamat = $this->input->post("alamat");
-			$id_status_verifikasi = 1;
+			$id_status_verifikasi = 2;
 			$foto_logo_old = $this->input->post('logo_usaha_old');
 			$file_name = md5($nama_usaha.$alamat.$foto_logo_old);
 

@@ -67,8 +67,6 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-
-
                     <div class="row justify-content-center">
                         <div class="col col-8">
                             <?php
@@ -84,6 +82,7 @@
                                             $no_telp = $i['no_telp'];
                                             $nama_usaha = $i['nama_usaha'];
                                             $alamat = $i['alamat'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
                                             $logo_usaha = $i['logo_usaha'];
                                             $password = $i['password'];
                                                
@@ -95,16 +94,28 @@
                                 <div class="form-group">
                                     <label for="nama_usaha">Nama Usaha</label>
                                     <input type="text" class="form-control" id="nama_usaha"
-                                        aria-describedby="nama_usaha" name="nama_usaha" value="<?= $nama_usaha ?>">
+                                        aria-describedby="nama_usaha" name="nama_usaha" value="<?= $nama_usaha ?>" <?php  if($id_status_verifikasi == '4'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo '';
+                                    }  ?>>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"><?=$alamat?></textarea>
+                                    <textarea class="form-control" id="alamat" rows="3" name="alamat" <?php  if($id_status_verifikasi == '4'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo '';
+                                    }  ?>><?=$alamat?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="logo_usaha">Logo Usaha</label>
                                     <input type="file" class="form-control" id="logo_usaha"
-                                        aria-describedby="logo_usaha" name="logo_usaha">
+                                        aria-describedby="logo_usaha" name="logo_usaha" <?php  if($id_status_verifikasi == '4'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo '';
+                                    }  ?>>
                                 </div>
                                 <div class="form-group">
                                     <label for="keterangan">Preview Logo Usaha</label>
@@ -116,14 +127,15 @@
                                 </div>
                                 <input type="text" class="form-control" id="logo_usaha_old" aria-describedby="emailHelp"
                                     name="logo_usaha_old" value="<?=$logo_usaha?>" hidden>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" <?php  if($id_status_verifikasi == '4'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Submit</button>
                             </form>
                             <?php endforeach; ?>
                         </div>
                     </div>
-
-
-
                 </div>
                 <!-- /.container-fluid -->
             </section>

@@ -7,6 +7,34 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
 
+    <?php if ($this->session->flashdata('error_send')){ ?>
+    <script>
+    swal({
+        title: "Gagal Diiupdate!",
+        text: "Pesan gagal dikirim!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('input_status_verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diiupdate!",
+        text: "Data Telah diverifikasi!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_status_verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -147,6 +175,7 @@
                                                 <th>Nama Usaha</th>
                                                 <th>Alamat</th>
                                                 <th>Logo Usaha</th>
+                                                <th>Status Verifikasi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -162,6 +191,7 @@
                                             $no_telp = $i['no_telp'];
                                             $nama_usaha = $i['nama_usaha'];
                                             $alamat = $i['alamat'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
                                             $logo_usaha = $i['logo_usaha'];
                                             $password = $i['password'];
                                             
@@ -172,10 +202,24 @@
                                                 <td><?= $username?></td>
                                                 <td><?= $email ?></td>
                                                 <td><?= $no_telp ?></td>
+                                                <?php if($nama_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
                                                 <td><?= $nama_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($alamat == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
                                                 <td><?= $alamat ?></td>
+                                                <?php } ?>
                                                 <?php if($logo_usaha == NULL){ ?>
-                                                <td><center><i class="fas fa-times"></i></center></td>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
                                                 <?php }else{ ?>
                                                 <td>
                                                     <center> <a
@@ -185,6 +229,44 @@
                                                                 style="width: 25%"> </a>
                                                 </td>
                                                 <?php } ?>
+                                                <td><?php if($id_status_verifikasi == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-warning" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Menunggu Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 3) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Data Ditolak
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 4) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-success" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Data Diterima
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -202,6 +284,23 @@
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#setuju<?= $id_user ?>">
+                                                                <i class="fas fa-check"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#tidak_setuju<?= $id_user ?>"
+                                                                class="btn btn-danger"><i class="fas fa-times"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
                                                 </td>
                                             </tr>
                                             <!-- Modal Edit User-->
@@ -313,6 +412,79 @@
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal Verifikasi Data -->
+                                            <div class="modal fade" id="setuju<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi
+                                                                Data
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>User/verifikasi_data/4"
+                                                                method="POST">
+                                                                <input type="text" name="id_user" value="<?=$id_user?>"
+                                                                    hidden>
+                                                                <input type="text" name="email" value="<?=$email?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="pesan" required>Pesan</label>
+                                                                    <textarea class="form-control" id="pesan" rows="3"
+                                                                        name="pesan">Kepada yang terhormat Bpk/Ibu <?=$username?> Data yang anda kirim sudah diverifikasi admin, 
+Harap cek secara berkala dengan login ke aplikasi untuk informasi lebih lanjut. Terimakasih</textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Tolak Data -->
+                                            <div class="modal fade" id="tidak_setuju<?=$id_user?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tolak
+                                                                Data
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>User/verifikasi_data/3"
+                                                                method="POST">
+                                                                <input type="text" name="id_user" value="<?=$id_user?>"
+                                                                    hidden>
+                                                                <input type="text" name="email" value="<?=$email?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="pesan" required>Pesan</label>
+                                                                    <textarea class="form-control" id="pesan" rows="3"
+                                                                        name="pesan">Kepada yang terhormat Bpk/Ibu <?=$username?> Data yang anda kirim kurang lengkap,
+Diharapkan untuk melengkapi data nya terlebih dahulu, lalu lakukan pendaftaran ulang pada aplikasi. Terimakasih</textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>

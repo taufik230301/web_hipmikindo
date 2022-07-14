@@ -22,6 +22,25 @@
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil!",
+        text: "Password Berhasil Diubah !",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('success_send')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terkirim!",
+        text: "Request Setting Password Berhasil Terkirim!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
     <?php if($this->session->flashdata('success_log_out')){?>
     <script>
@@ -102,11 +121,13 @@
                         <figure><img src="<?= base_url();?>assets/login/images/hipmikindo_logo.jpeg"
                                 alt="sing up image"></figure>
                         <a href="<?= base_url();?>Register" class="signup-image-link">Buat Akun</a>
+                        <a href="<?= base_url();?>ForgotPassword" class="signup-image-link">Lupa Password ?</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign in</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?= base_url();?>Login/proses">
+                        <form method="POST" class="register-form" id="login-form"
+                            action="<?= base_url();?>Login/proses">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Your Name" />
@@ -115,12 +136,12 @@
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Password" />
                             </div>
-                            
+
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                             </div>
                         </form>
-                       
+
                     </div>
                 </div>
             </div>
