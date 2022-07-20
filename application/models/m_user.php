@@ -42,6 +42,24 @@ class M_user extends CI_Model
             return $hasil;
     }
 
+    public function get_count_user_verified()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id) as total_user FROM user JOIN user_detail ON user.id = user_detail.id_user_detail WHERE id_user_level=2 AND user_detail.id_status_verifikasi = 4");
+            return $hasil;
+    }
+
+    public function get_count_user_not_verified()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id) as total_user FROM user JOIN user_detail ON user.id = user_detail.id_user_detail WHERE id_user_level=2 AND user_detail.id_status_verifikasi = 3");
+            return $hasil;
+    }
+
+    public function get_count_user_wait_verified()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id) as total_user FROM user JOIN user_detail ON user.id = user_detail.id_user_detail WHERE id_user_level=2 AND user_detail.id_status_verifikasi = 2");
+            return $hasil;
+    }
+
     public function insert_data_user($id, $username, $password, $email, $no_telp, $nama_usaha, $alamat ,$foto ,$id_user_level, $id_status_verifikasi)
     {
         $this->db->trans_start();

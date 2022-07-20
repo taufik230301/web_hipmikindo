@@ -46,11 +46,11 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero">Profil</a></li>
 
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Galeri</a></li>
                     <li><a class="nav-link scrollto " href="#portfolio">UMKM</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -94,7 +94,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="zoom-in">
-                        <img src="<?= base_url();?>assets/public_page/img/about.jpg" class="img-fluid" alt="">
+                        <img src="<?= base_url();?>assets/image/bersama.jpeg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0">
@@ -349,7 +349,7 @@
                     <div class="col-lg-5 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Profil</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">UMKM</a></li>
                         </ul>

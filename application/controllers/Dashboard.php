@@ -15,6 +15,9 @@ class Dashboard extends CI_Controller {
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
 		$data['user'] = $this->m_user->get_count_user()->row_array();
+		$data['user_terverifikasi'] = $this->m_user->get_count_user_verified()->row_array();
+		$data['user_tolak_verifikasi'] = $this->m_user->get_count_user_not_verified()->row_array();
+		$data['user_tunggu_verifikasi'] = $this->m_user->get_count_user_wait_verified()->row_array();
 		$this->load->view('admin/dashboard', $data);
 
 	}else{
