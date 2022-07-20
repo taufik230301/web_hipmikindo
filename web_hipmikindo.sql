@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 01:52 AM
+-- Generation Time: Jul 20, 2022 at 03:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -45,18 +45,19 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `no_telp` varchar(30) NOT NULL,
   `id_user_level` int(10) NOT NULL,
-  `id_user_detail` varchar(256) NOT NULL
+  `id_user_detail` varchar(256) NOT NULL,
+  `token` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_telp`, `id_user_level`, `id_user_detail`) VALUES
-('0f49d8519cb0233a78a143460f18d061', 'kresna123', '123', 'malian123@gmail.com', '0812781728', 2, '0f49d8519cb0233a78a143460f18d061'),
-('1a4c64629ba772eac53d0eb53e4d2de2', 'taufik123', 'taufik123', 'taufiiqul.hakim@binus.ac.id', '0812781728', 2, '1a4c64629ba772eac53d0eb53e4d2de2'),
-('50207cacbc9af45e566eb638f8ed12b2', 'malas', 'malas123', 'malian123@gmail.com', '0812781728', 2, '50207cacbc9af45e566eb638f8ed12b2'),
-('d41d8cd98f00b204e9800998ecf8427e', 'admin', 'admin', 'admin@gmail.com', '081217812', 1, 'd41d8cd98f00b204e9800998ecf8427e');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_telp`, `id_user_level`, `id_user_detail`, `token`) VALUES
+('0f49d8519cb0233a78a143460f18d061', 'kresna123', '123', 'malian123@gmail.com', '0812781728', 2, '0f49d8519cb0233a78a143460f18d061', NULL),
+('324cc16f5879fe7c22145281456f2bc8', 'malian', '123', 'malian123@gmail.com', '+62812781728', 2, '324cc16f5879fe7c22145281456f2bc8', NULL),
+('50207cacbc9af45e566eb638f8ed12b2', 'malas', '1234', 'taufiiqul.hakim@binus.ac.id', '0812781728', 2, '50207cacbc9af45e566eb638f8ed12b2', '93989f35fdf51a3e152b5bb627036686'),
+('d41d8cd98f00b204e9800998ecf8427e', 'admin', 'admin', 'admin@gmail.com', '081217812', 1, 'd41d8cd98f00b204e9800998ecf8427e', NULL);
 
 -- --------------------------------------------------------
 
@@ -78,9 +79,9 @@ CREATE TABLE `user_detail` (
 
 INSERT INTO `user_detail` (`id_user_detail`, `nama_usaha`, `alamat`, `logo_usaha`, `id_status_verifikasi`) VALUES
 ('d41d8cd98f00b204e9800998ecf8427e', NULL, NULL, '', 1),
-('1a4c64629ba772eac53d0eb53e4d2de2', 'Tukang aplikasi', 'Nice', 'a942644172b54d5a15e24d3ec850f513.png', 1),
-('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Jl. Sekip', 'f851d1543c51fba6a8498d376f1db9b4.png', 1),
-('50207cacbc9af45e566eb638f8ed12b2', 'Malas Koding', 'Jl.Belanti', 'de419f84840fab46835e738bd233e696.png', 1);
+('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Jl. Sekip', 'f851d1543c51fba6a8498d376f1db9b4.png', 4),
+('50207cacbc9af45e566eb638f8ed12b2', 'Malas Koding', 'Jl.Belanti', 'de419f84840fab46835e738bd233e696.png', 4),
+('324cc16f5879fe7c22145281456f2bc8', NULL, NULL, '', 3);
 
 -- --------------------------------------------------------
 
