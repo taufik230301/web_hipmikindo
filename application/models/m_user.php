@@ -30,6 +30,12 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function get_user_umkm_verified()
+    {
+        $hasil = $this->db->query('SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 2 AND user_detail.id_status_verifikasi=4');
+        return $hasil;
+    }
+
     public function get_user_umkm_by_id($id)
     {
         $hasil = $this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level = 2 AND id='$id'");

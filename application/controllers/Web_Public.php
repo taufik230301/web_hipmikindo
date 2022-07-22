@@ -11,7 +11,7 @@ class Web_Public extends CI_Controller {
 
 	public function index()
 	{
-		$data['data_user'] = $this->m_user->get_user_umkm()->result_array();
+		$data['data_user'] = $this->m_user->get_user_umkm_verified()->result_array();
 		$this->load->view('public_page', $data);
 	}
 }
