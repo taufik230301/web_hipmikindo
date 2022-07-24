@@ -223,7 +223,7 @@
                                             $username = $i['username'];
                                             $email = $i['email'];
                                             $no_telp = $i['no_telp'];
-                                            $nama_usaha = $i['nama_usaha'];
+                                            $nama_lengkap = $i['nama_lengkap'];
                                             $alamat = $i['alamat'];
                                             $logo_usaha = $i['logo_usaha'];
                                             $password = $i['password'];
@@ -235,7 +235,7 @@
                             <img src="<?= base_url();?>assets/foto/<?=$logo_usaha?>"
                                 class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4><?=$nama_usaha?></h4>
+                                <h4><?=$nama_lengkap?></h4>
                                 <p><?=$no_telp?></p>
                             </div>
                             <div class="portfolio-links">

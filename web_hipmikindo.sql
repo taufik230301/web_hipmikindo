@@ -67,7 +67,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_telp`, `id_user_l
 
 CREATE TABLE `user_detail` (
   `id_user_detail` varchar(256) NOT NULL,
-  `nama_usaha` varchar(30) DEFAULT NULL,
+  `nama_lengkap` varchar(30) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
   `logo_usaha` varchar(250) NOT NULL,
   `id_status_verifikasi` int(11) NOT NULL
@@ -77,7 +77,7 @@ CREATE TABLE `user_detail` (
 -- Dumping data for table `user_detail`
 --
 
-INSERT INTO `user_detail` (`id_user_detail`, `nama_usaha`, `alamat`, `logo_usaha`, `id_status_verifikasi`) VALUES
+INSERT INTO `user_detail` (`id_user_detail`, `nama_lengkap`, `alamat`, `logo_usaha`, `id_status_verifikasi`) VALUES
 ('d41d8cd98f00b204e9800998ecf8427e', NULL, NULL, '', 1),
 ('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Jl. Sekip', 'f851d1543c51fba6a8498d376f1db9b4.png', 4),
 ('50207cacbc9af45e566eb638f8ed12b2', 'Malas Koding', 'Jl.Belanti', 'de419f84840fab46835e738bd233e696.png', 4),

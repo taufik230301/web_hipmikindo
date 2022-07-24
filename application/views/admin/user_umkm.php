@@ -189,10 +189,27 @@
                                             $username = $i['username'];
                                             $email = $i['email'];
                                             $no_telp = $i['no_telp'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $nik = $i['nik'];
+                                            $tempat_lahir = $i['tempat_lahir'];
+                                            $tanggal_lahir = $i['tanggal_lahir'];
+                                            $penanggung_jawab = $i['penanggung_jawab'];
+                                            $jenis_usaha = $i['jenis_usaha'];
                                             $nama_usaha = $i['nama_usaha'];
+                                            $jenis_produk_jasa = $i['jenis_produk_jasa'];
+                                            $merk_produk_jasa = $i['merk_produk_jasa'];
+                                            $kapasitas_usaha = $i['kapasitas_usaha'];
+                                            $pendapatan = $i['pendapatan'];
+                                            $mulai_usaha = $i['mulai_usaha'];
+                                            $jumlah_karyawan = $i['jumlah_karyawan'];
+                                            $mesin_produksi = $i['mesin_produksi'];
+                                            $luas_lahan_ruang = $i['luas_lahan_ruang'];
+                                            $ijin_dimiliki = $i['ijin_dimiliki'];
+                                            $keluhan_usaha = $i['keluhan_usaha'];
                                             $alamat = $i['alamat'];
                                             $id_status_verifikasi = $i['id_status_verifikasi'];
                                             $logo_usaha = $i['logo_usaha'];
+                                            $ktp = $i['ktp'];
                                             $password = $i['password'];
                                             
 
@@ -202,12 +219,12 @@
                                                 <td><?= $username?></td>
                                                 <td><?= $email ?></td>
                                                 <td><?= $no_telp ?></td>
-                                                <?php if($nama_usaha == NULL){ ?>
+                                                <?php if($nama_lengkap == NULL){ ?>
                                                 <td>
                                                     <center><i class="fas fa-times"></i></center>
                                                 </td>
                                                 <?php }else{ ?>
-                                                <td><?= $nama_usaha ?></td>
+                                                <td><?= $nama_lengkap ?></td>
                                                 <?php } ?>
                                                 <?php if($alamat == NULL){ ?>
                                                 <td>
@@ -326,47 +343,187 @@
                                                                     <label for="username">Username</label>
                                                                     <input type="text" class="form-control"
                                                                         id="username" aria-describedby="username"
-                                                                        name="username" value="<?= $username ?>">
+                                                                        name="username" value="<?= $username ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="password">Password</label>
                                                                     <input type="text" class="form-control"
                                                                         id="password" aria-describedby="password"
-                                                                        name="password" value="<?= $password ?>">
+                                                                        name="password" value="<?= $password ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="email">Email</label>
                                                                     <input type="text" class="form-control" id="email"
                                                                         aria-describedby="email" name="email"
-                                                                        value="<?= $email ?>">
+                                                                        value="<?= $email ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="no_telp">No HP</label>
                                                                     <input type="text" class="form-control" id="no_telp"
                                                                         aria-describedby="no_telp" name="no_telp"
-                                                                        value="<?= $no_telp ?>">
+                                                                        value="<?= $no_telp ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nama_lengkap">Nama Lengkap</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="nama_lengkap"
+                                                                        aria-describedby="nama_lengkap"
+                                                                        name="nama_lengkap" value="<?= $nama_lengkap ?>"
+                                                                        required>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="alamat">Alamat</label>
+                                                                    <textarea class="form-control" id="alamat" rows="3"
+                                                                        name="alamat" required><?=$alamat?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nik">NIK</label>
+                                                                    <input type="text" class="form-control" id="nik"
+                                                                        aria-describedby="nik" name="nik"
+                                                                        value="<?= $nik ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tempat_lahir">Tempat Lahir</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="tempat_lahir"
+                                                                        aria-describedby="tempat_lahir"
+                                                                        name="tempat_lahir" value="<?= $tempat_lahir ?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tanggal_lahir"
+                                                                        aria-describedby="tanggal_lahir"
+                                                                        name="tanggal_lahir"
+                                                                        value="<?= $tanggal_lahir ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="penanggung_jawab">Penanggung
+                                                                        Jawab</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="penanggung_jawab"
+                                                                        aria-describedby="penanggung_jawab"
+                                                                        name="penanggung_jawab"
+                                                                        value="<?= $penanggung_jawab ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jenis_usaha">Jenis Usaha</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="jenis_usaha" aria-describedby="jenis_usaha"
+                                                                        name="jenis_usaha" value="<?= $jenis_usaha ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="nama_usaha">Nama Usaha</label>
                                                                     <input type="text" class="form-control"
                                                                         id="nama_usaha" aria-describedby="nama_usaha"
-                                                                        name="nama_usaha" value="<?= $nama_usaha ?>">
+                                                                        name="nama_usaha" value="<?= $nama_usaha ?>"
+                                                                        required>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="alamat">Alamat</label>
-                                                                    <textarea class="form-control" id="alamat" rows="3"
-                                                                        name="alamat"><?=$alamat?></textarea>
+                                                                    <label for="jenis_produk_jasa">Jenis
+                                                                        Produk/Jasa</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="jenis_produk_jasa"
+                                                                        aria-describedby="jenis_produk_jasa"
+                                                                        name="jenis_produk_jasa"
+                                                                        value="<?= $jenis_produk_jasa ?>" required>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label for="merk_produk_jasa">Merk
+                                                                        Produk/Jasa</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="merk_produk_jasa"
+                                                                        aria-describedby="merk_produk_jasa"
+                                                                        name="merk_produk_jasa"
+                                                                        value="<?= $merk_produk_jasa ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kapasitas_usaha">Kapasitas Usaha</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="kapasitas_usaha"
+                                                                        aria-describedby="kapasitas_usaha"
+                                                                        name="kapasitas_usaha"
+                                                                        value="<?= $kapasitas_usaha ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pendapatan">Pendaptan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="pendapatan" aria-describedby="pendapatan"
+                                                                        name="pendapatan" value="<?= $pendapatan ?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="mulai_usaha">Mulai Usaha</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="mulai_usaha" aria-describedby="mulai_usaha"
+                                                                        name="mulai_usaha" value="<?= $mulai_usaha ?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jumlah_karyawan">Jumlah Karyawan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="jumlah_karyawan"
+                                                                        aria-describedby="jumlah_karyawan"
+                                                                        name="jumlah_karyawan"
+                                                                        value="<?= $jumlah_karyawan ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="mesin_produksi">Mesin Produksi</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="mesin_produksi"
+                                                                        aria-describedby="mesin_produksi"
+                                                                        name="mesin_produksi"
+                                                                        value="<?= $mesin_produksi ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="luas_lahan_ruang">Luas
+                                                                        Lahan/Ruang</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="luas_lahan_ruang"
+                                                                        aria-describedby="luas_lahan_ruang"
+                                                                        name="luas_lahan_ruang"
+                                                                        value="<?= $luas_lahan_ruang ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="ijin_dimiliki">Ijin Dimiliki</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="ijin_dimiliki"
+                                                                        aria-describedby="ijin_dimiliki"
+                                                                        name="ijin_dimiliki"
+                                                                        value="<?= $ijin_dimiliki ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="keluhan_usaha">Keluhan Usaha</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="keluhan_usaha"
+                                                                        aria-describedby="keluhan_usaha"
+                                                                        name="keluhan_usaha"
+                                                                        value="<?= $keluhan_usaha ?>" required>
+                                                                </div>
+
                                                                 <div class="form-group">
                                                                     <label for="logo_usaha">Logo Usaha</label>
                                                                     <input type="file" class="form-control"
                                                                         id="logo_usaha" aria-describedby="logo_usaha"
-                                                                        name="logo_usaha">
+                                                                        name="logo_usaha" required>
                                                                 </div>
                                                                 <input type="text" class="form-control"
                                                                     id="logo_usaha_old" aria-describedby="emailHelp"
                                                                     name="logo_usaha_old" value="<?=$logo_usaha?>"
                                                                     hidden>
+                                                                <div class="form-group">
+                                                                    <label for="ktp">KTP</label>
+                                                                    <input type="file" class="form-control" id="ktp"
+                                                                        aria-describedby="ktp" name="ktp" required>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="ktp_old"
+                                                                    aria-describedby="emailHelp" name="ktp_old"
+                                                                    value="<?=$ktp?>" hidden>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
                                                             </form>
@@ -398,7 +555,9 @@
                                                                         <input type="hidden" name="id"
                                                                             value="<?php echo $id_user?>" />
                                                                         <input type="text" name="logo_usaha_old"
-                                                                            value="<?php echo $logo_usaha?>" hidden />
+                                                                            value="<?php echo $ktp?>" hidden />
+                                                                        <input type="text" name="ktp_old"
+                                                                            value="<?php echo $ktp?>" hidden />
 
                                                                         <p>Apakah kamu yakin ingin menghapus data
                                                                             ini?</i></b></p>
@@ -538,18 +697,122 @@ Diharapkan untuk melengkapi data nya terlebih dahulu, lalu lakukan pendaftaran u
                                             name="no_telp">
                                     </div>
                                     <div class="form-group">
-                                        <label for="nama_usaha">Nama Usaha</label>
-                                        <input type="text" class="form-control" id="nama_usaha"
-                                            aria-describedby="nama_usaha" name="nama_usaha">
+                                        <label for="nama_lengkap">Nama Usaha</label>
+                                        <input type="text" class="form-control" id="nama_lengkap"
+                                            aria-describedby="nama_lengkap" name="nama_lengkap">
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="nik">NIK</label>
+                                        <input type="text" class="form-control" id="nik" aria-describedby="nik"
+                                            name="nik" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tempat_lahir">Tempat Lahir</label>
+                                        <input type="text" class="form-control" id="tempat_lahir"
+                                            aria-describedby="tempat_lahir" name="tempat_lahir"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="tanggal_lahir"
+                                            aria-describedby="tanggal_lahir" name="tanggal_lahir"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="penanggung_jawab">Penanggung
+                                            Jawab</label>
+                                        <input type="text" class="form-control" id="penanggung_jawab"
+                                            aria-describedby="penanggung_jawab" name="penanggung_jawab"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jenis_usaha">Jenis Usaha</label>
+                                        <input type="text" class="form-control" id="jenis_usaha"
+                                            aria-describedby="jenis_usaha" name="jenis_usaha"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_usaha">Nama Usaha</label>
+                                        <input type="text" class="form-control" id="nama_usaha"
+                                            aria-describedby="nama_usaha" name="nama_usaha"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jenis_produk_jasa">Jenis
+                                            Produk/Jasa</label>
+                                        <input type="text" class="form-control" id="jenis_produk_jasa"
+                                            aria-describedby="jenis_produk_jasa" name="jenis_produk_jasa"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="merk_produk_jasa">Merk
+                                            Produk/Jasa</label>
+                                        <input type="text" class="form-control" id="merk_produk_jasa"
+                                            aria-describedby="merk_produk_jasa" name="merk_produk_jasa"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kapasitas_usaha">Kapasitas Usaha</label>
+                                        <input type="text" class="form-control" id="kapasitas_usaha"
+                                            aria-describedby="kapasitas_usaha" name="kapasitas_usaha"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pendapatan">Pendaptan</label>
+                                        <input type="text" class="form-control" id="pendapatan"
+                                            aria-describedby="pendapatan" name="pendapatan" 
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mulai_usaha">Mulai Usaha</label>
+                                        <input type="date" class="form-control" id="mulai_usaha"
+                                            aria-describedby="mulai_usaha" name="mulai_usaha"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jumlah_karyawan">Jumlah Karyawan</label>
+                                        <input type="text" class="form-control" id="jumlah_karyawan"
+                                            aria-describedby="jumlah_karyawan" name="jumlah_karyawan"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mesin_produksi">Mesin Produksi</label>
+                                        <input type="text" class="form-control" id="mesin_produksi"
+                                            aria-describedby="mesin_produksi" name="mesin_produksi"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="luas_lahan_ruang">Luas
+                                            Lahan/Ruang</label>
+                                        <input type="text" class="form-control" id="luas_lahan_ruang"
+                                            aria-describedby="luas_lahan_ruang" name="luas_lahan_ruang"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ijin_dimiliki">Ijin Dimiliki</label>
+                                        <input type="text" class="form-control" id="ijin_dimiliki"
+                                            aria-describedby="ijin_dimiliki" name="ijin_dimiliki"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="keluhan_usaha">Keluhan Usaha</label>
+                                        <input type="text" class="form-control" id="keluhan_usaha"
+                                            aria-describedby="keluhan_usaha" name="keluhan_usaha"
+                                             required>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="logo_usaha">Logo Usaha</label>
                                         <input type="file" class="form-control" id="logo_usaha"
                                             aria-describedby="logo_usaha" name="logo_usaha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ktp">KTP</label>
+                                        <input type="file" class="form-control" id="ktp"
+                                            aria-describedby="ktp" name="ktp">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

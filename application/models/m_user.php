@@ -66,12 +66,14 @@ class M_user extends CI_Model
             return $hasil;
     }
 
-    public function insert_data_user($id, $username, $password, $email, $no_telp, $nama_usaha, $alamat ,$foto ,$id_user_level, $id_status_verifikasi)
+    public function insert_data_user($id, $username, $password, $email, $no_telp, $nama_lengkap, $alamat , $nik, $tempat_lahir, $tanggal_lahir, $penanggung_jawab, $jenis_usaha, $nama_usaha, $jenis_produk_jasa, $merk_produk_jasa, $kapasitas_usaha, $pendapatan, $mulai_usaha, $jumlah_karyawan, $mesin_produksi, $luas_lahan_ruang, $ijin_dimiliki, $foto_logo, $keluhan_usaha, $foto_ktp ,$id_user_level, $id_status_verifikasi)
     {
         $this->db->trans_start();
 
         $this->db->query("INSERT INTO user(id,username,password,email ,no_telp ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$no_telp','$id_user_level','$id')");
-        $this->db->query("INSERT INTO user_detail(id_user_detail, nama_usaha, alamat, logo_usaha, id_status_verifikasi) VALUES ('$id', '$nama_usaha', '$alamat', '$foto','$id_status_verifikasi')");
+        $this->db->query("INSERT INTO user_detail(id_user_detail, nama_lengkap, alamat, nik, tempat_lahir, tanggal_lahir, penanggung_jawab, jenis_usaha, nama_usaha, jenis_produk_jasa, merk_produk_jasa, kapasitas_usaha, pendapatan, mulai_usaha, jumlah_karyawan, mesin_produksi, luas_lahan_ruang, ijin_dimiliki, logo_usaha, keluhan_usaha, ktp, id_status_verifikasi) 
+        VALUES ('$id', '$nama_lengkap', '$alamat', '$nik', '$tempat_lahir', '$tanggal_lahir', '$penanggung_jawab', '$jenis_usaha', '$nama_usaha', '$jenis_produk_jasa', '$merk_produk_jasa', '$kapasitas_usaha', '$pendapatan', '$mulai_usaha', '$jumlah_karyawan', '$mesin_produksi', '$luas_lahan_ruang', '$ijin_dimiliki','$foto_logo', '$keluhan_usaha', '$foto_ktp',
+  '$id_status_verifikasi')");
  
         $this->db->trans_complete();
          if($this->db->trans_status()==true)
@@ -94,12 +96,14 @@ class M_user extends CI_Model
              return false;
     }
 
-    public function update_data_user($id, $username, $password, $email, $no_telp, $nama_usaha, $alamat, $logo_usaha, $id_status_verifikasi)
+    public function update_data_user($id, $username, $password, $email, $no_telp, $nama_lengkap, $alamat, $nik, $tempat_lahir, $tanggal_lahir, $penanggung_jawab, $jenis_usaha, $nama_usaha, $jenis_produk_jasa, $merk_produk_jasa, $kapasitas_usaha, $pendapatan, $mulai_usaha, $jumlah_karyawan, $mesin_produksi, $luas_lahan_ruang, $ijin_dimiliki, $foto_logo, $keluhan_usaha, $foto_ktp)
     {
         $this->db->trans_start();
 
         $this->db->query("UPDATE user SET username='$username', password='$password', email='$email', no_telp='$no_telp' WHERE id='$id'");
-        $this->db->query("UPDATE user_detail SET nama_usaha='$nama_usaha', alamat='$alamat', logo_usaha='$logo_usaha'  WHERE id_user_detail='$id'");
+        $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', alamat='$alamat', nik='$nik', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', penanggung_jawab='$penanggung_jawab', jenis_usaha='$jenis_usaha', 
+        nama_usaha='$nama_usaha', jenis_produk_jasa='$jenis_produk_jasa', merk_produk_jasa='$merk_produk_jasa', kapasitas_usaha='$kapasitas_usaha', pendapatan='$pendapatan', mulai_usaha='$mulai_usaha', 
+        jumlah_karyawan='$jumlah_karyawan',  mesin_produksi='$mesin_produksi',  luas_lahan_ruang='$luas_lahan_ruang',  ijin_dimiliki='$ijin_dimiliki',  logo_usaha='$foto_logo',  keluhan_usaha='$keluhan_usaha', ktp='$foto_ktp', logo_usaha='$foto_logo'  WHERE id_user_detail='$id'");
 
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
@@ -145,11 +149,14 @@ class M_user extends CI_Model
             return false;
     }   
 
-    public function daftar_data_user($id, $nama_usaha, $alamat, $logo_usaha, $id_status_verifikasi)
+    public function daftar_data_user($id, $nama_lengkap, $alamat, $nik, $tempat_lahir, $tanggal_lahir, $penanggung_jawab, $jenis_usaha, $nama_usaha,
+     $jenis_produk_jasa, $merk_produk_jasa, $kapasitas_usaha, $pendapatan, $mulai_usaha, $jumlah_karyawan, $mesin_produksi, $luas_lahan_ruang, $ijin_dimiliki, $foto_logo, $keluhan_usaha, $foto_ktp, $id_status_verifikasi)
     {
         $this->db->trans_start();
 
-        $this->db->query("UPDATE user_detail SET nama_usaha='$nama_usaha', alamat='$alamat', logo_usaha='$logo_usaha'  WHERE id_user_detail='$id'");
+        $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', alamat='$alamat', nik='$nik', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', penanggung_jawab='$penanggung_jawab', jenis_usaha='$jenis_usaha', 
+        nama_usaha='$nama_usaha', jenis_produk_jasa='$jenis_produk_jasa', merk_produk_jasa='$merk_produk_jasa', kapasitas_usaha='$kapasitas_usaha', pendapatan='$pendapatan', mulai_usaha='$mulai_usaha', 
+        jumlah_karyawan='$jumlah_karyawan',  mesin_produksi='$mesin_produksi',  luas_lahan_ruang='$luas_lahan_ruang',  ijin_dimiliki='$ijin_dimiliki',  logo_usaha='$foto_logo',  keluhan_usaha='$keluhan_usaha', ktp='$foto_ktp', id_status_verifikasi='$id_status_verifikasi'  WHERE id_user_detail='$id'");
 
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
