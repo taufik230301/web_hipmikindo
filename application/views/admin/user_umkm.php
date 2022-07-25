@@ -174,7 +174,24 @@
                                                 <th>No HP</th>
                                                 <th>Nama Usaha</th>
                                                 <th>Alamat</th>
+                                                <th>Nik</th>
+                                                <th>Tempat Lahir</th>
+                                                <th>Tanggal Lahir</th>
+                                                <th>Penanggung Jawab</th>
+                                                <th>Jenis Usaha</th>
+                                                <th>Nama Usaha</th>
+                                                <th>Jenis Produk/Jasa</th>
+                                                <th>Merk Produk/Jasa</th>
+                                                <th>Kapasitas Usaha</th>
+                                                <th>Pendapatan</th>
+                                                <th>Mulai Usaha</th>
+                                                <th>Jumlah Karyawan</th>
+                                                <th>Mesin Produksi</th>
+                                                <th>Luas Lahan/Ruang</th>
+                                                <th>Ijin Dimiliki</th>
                                                 <th>Logo Usaha</th>
+                                                <th>Keluhan Usaha</th>
+                                                <th>KTP</th>
                                                 <th>Status Verifikasi</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -233,6 +250,112 @@
                                                 <?php }else{ ?>
                                                 <td><?= $alamat ?></td>
                                                 <?php } ?>
+                                                <?php if($nik == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $nik ?></td>
+                                                <?php } ?>
+                                                <?php if($tempat_lahir == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $tempat_lahir ?></td>
+                                                
+                                                <?php } ?>
+                                                <?php if($tanggal_lahir == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $tanggal_lahir ?></td>
+                                                <?php } ?>
+                                                <?php if($penanggung_jawab == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $penanggung_jawab ?></td>
+                                                <?php } ?>
+                                                <?php if($jenis_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $jenis_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($nama_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $nama_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($jenis_produk_jasa == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $jenis_produk_jasa ?></td>
+                                                <?php } ?>
+                                                <?php if($merk_produk_jasa == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $merk_produk_jasa ?></td>
+                                                <?php } ?>
+                                                <?php if($kapasitas_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $kapasitas_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($pendapatan == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $pendapatan ?></td>
+                                                <?php } ?>
+                                                <?php if($mulai_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $mulai_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($jumlah_karyawan == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $jumlah_karyawan ?></td>
+                                                <?php } ?>
+                                                <?php if($mesin_produksi == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $mesin_produksi ?></td>
+                                                <?php } ?>
+                                                <?php if($luas_lahan_ruang == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $luas_lahan_ruang ?></td>
+                                                <?php } ?>
+                                                <?php if($ijin_dimiliki == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $ijin_dimiliki ?></td>
+                                                <?php } ?>
                                                 <?php if($logo_usaha == NULL){ ?>
                                                 <td>
                                                     <center><i class="fas fa-times"></i></center>
@@ -243,6 +366,26 @@
                                                             href="<?= base_url();?>assets/foto/<?php echo $logo_usaha?>"
                                                             target="_blank"><img
                                                                 src="<?= base_url();?>assets/foto/<?php echo $logo_usaha?>"
+                                                                style="width: 25%"> </a>
+                                                </td>
+                                                <?php } ?>
+                                                <?php if($keluhan_usaha == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td><?= $keluhan_usaha ?></td>
+                                                <?php } ?>
+                                                <?php if($ktp == NULL){ ?>
+                                                <td>
+                                                    <center><i class="fas fa-times"></i></center>
+                                                </td>
+                                                <?php }else{ ?>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/foto/<?php echo $ktp?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/foto/<?php echo $ktp?>"
                                                                 style="width: 25%"> </a>
                                                 </td>
                                                 <?php } ?>
@@ -317,7 +460,6 @@
                                                             </a>
                                                         </div>
                                                     </div>
-
                                                 </td>
                                             </tr>
                                             <!-- Modal Edit User-->
