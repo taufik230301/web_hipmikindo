@@ -232,16 +232,15 @@
                                             ?>
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                            <img src="<?= base_url();?>assets/foto/<?=$logo_usaha?>"
-                                class="img-fluid" alt="">
+                            <img src="<?= base_url();?>assets/foto/<?=$logo_usaha?>" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><?=$nama_lengkap?></h4>
                                 <p><?=$no_telp?></p>
                             </div>
                             <div class="portfolio-links">
-                                <a href="<?= base_url();?>assets/foto/<?=$logo_usaha?>"
-                                    data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
-                                        class="bx bx-plus"></i></a>
+                                <a href="<?= base_url();?>assets/foto/<?=$logo_usaha?>" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                <a href="<?=base_url();?>Web_Public/detail_user/<?=$id_user?>" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
