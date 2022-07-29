@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2022 at 01:44 AM
+-- Generation Time: Jul 29, 2022 at 05:12 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -96,11 +96,11 @@ CREATE TABLE `user_detail` (
 --
 
 INSERT INTO `user_detail` (`id_user_detail`, `nama_lengkap`, `alamat`, `nik`, `tempat_lahir`, `tanggal_lahir`, `penanggung_jawab`, `jenis_usaha`, `nama_usaha`, `jenis_produk_jasa`, `merk_produk_jasa`, `kapasitas_usaha`, `pendapatan`, `mulai_usaha`, `jumlah_karyawan`, `mesin_produksi`, `luas_lahan_ruang`, `ijin_dimiliki`, `logo_usaha`, `keluhan_usaha`, `ktp`, `id_status_verifikasi`) VALUES
-('d41d8cd98f00b204e9800998ecf8427e', NULL, NULL, '', '', '0000-00-00', '', '', NULL, '', '', '', 0, '0000-00-00', '', '', '', '', '', NULL, NULL, 1),
-('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Jl. Sekip', '', '', '0000-00-00', '', '', NULL, '', '', '', 0, '0000-00-00', '', '', '', '', 'f851d1543c51fba6a8498d376f1db9b4.png', NULL, NULL, 4),
-('06aeebeac840c20b995e71da2e602ae7', 'Cuciyok', 'Jl. Sekip', '', '', '0000-00-00', '', '', NULL, '', '', '', 0, '0000-00-00', '', '', '', '', '3aa830525fafca3d727df2add62f6484.png', NULL, NULL, 1),
+('06aeebeac840c20b995e71da2e602ae7', 'Cuciyok', '2Q3G+VRW, 13 Ulu, Seberang Ulu II, Palembang City, South Sumatra 30116', '', '', '0000-00-00', '', '', NULL, '', '', '', 0, '0000-00-00', '', '', '', '', '3aa830525fafca3d727df2add62f6484.png', NULL, NULL, 1),
+('0f49d8519cb0233a78a143460f18d061', 'Kripik Ubi', 'Bukit Lama No 2 Palembang', '018281727172', 'Palembang', '1281-03-21', 'Test', 'Kaki Lima', 'Cuciyok', 'Cuci Sepatu', 'Cuci cuci', '100', 1000000000, '2022-07-18', '100', 'tes', 'tes', 'tes', 'a5b59eaf5c4ce212154e874b3c99457b_logo_usaha.png', 'Blm ada pemasaran', 'a5b59eaf5c4ce212154e874b3c99457b_ktp.png', 4),
+('805970851350129b90d436fc887f1740', 'Taufiiqulhakim 10219021', 'Jl. Sekip', '061827182871812', 'Palembang', '1111-02-23', 'tes', 'tes', 'Cuciyok', 'tes', 'tes', 'tes', 100, '1291-02-23', '100', 'ye', 'ey', 'eh', 'dac66595586eee1c058266ae05db56f1_logo_usaha.png', 'eh', 'dac66595586eee1c058266ae05db56f1_ktp.png', 1),
 ('9cfe6b2a690f026c5d0531709354ac71', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-('805970851350129b90d436fc887f1740', 'Taufiiqulhakim 10219021', 'Jl. Sekip', '061827182871812', 'Palembang', '1111-02-23', '2019220028', 'tes', 'Cuciyok', 'tes', 'tes', 'tes', 100, '1291-02-23', '100', 'ye', 'ey', 'eh', 'ed29ec9973639509f70e54f0ca96c32f_logo_usaha.png', 'eh', 'ed29ec9973639509f70e54f0ca96c32f_ktp.png', 1);
+('d41d8cd98f00b204e9800998ecf8427e', NULL, NULL, '', '', '0000-00-00', '', '', NULL, '', '', '', 0, '0000-00-00', '', '', '', '', '', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -136,6 +136,12 @@ ALTER TABLE `status_verfikasi`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_detail`
+--
+ALTER TABLE `user_detail`
+  ADD PRIMARY KEY (`id_user_detail`);
 
 --
 -- Indexes for table `user_level`
